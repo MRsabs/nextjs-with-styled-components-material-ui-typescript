@@ -1,0 +1,35 @@
+{
+	"root": true,
+	"parser": "@typescript-eslint/parser",
+	"plugins": ["@typescript-eslint", "import"],
+	"extends": [
+		"eslint:recommended",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:react/recommended",
+		"plugin:react-hooks/recommended",
+		"plugin:import/recommended",
+		"plugin:import/typescript",
+		"prettier"
+	],
+	"rules": {
+		// turn on errors for missing imports
+		"import/no-unresolved": "error"
+	},
+	"settings": {
+		"react": {
+			"createClass": "createReactClass",
+			"pragma": "React",
+			"fragment": "Fragment",
+			"version": "detect"
+		},
+		"linkComponents": ["Hyperlink", { "name": "Link", "linkAttribute": "to" }],
+		"import/parsers": {
+			"@typescript-eslint/parser": [".ts", ".tsx"]
+		},
+		"import/resolver": {
+			"typescript": {
+				"alwaysTryTypes": true
+			}
+		}
+	}
+}
